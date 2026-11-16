@@ -79,11 +79,27 @@ result = await books.insertMany([
     tags: ["human relations"]
   },
   {
+    _id: 1,
     title: "Rich Dad Poor Dad",
     publisher: {
       name: "Cashflow Technologies, Inc."
     }
-  }
+  },
+  {
+    title: "1984", 
+  },
+  {
+    title: "1984", 
+  },
+  {
+    title: "1984", 
+  },
+  {
+    title: "1984", 
+  },
+  {
+    title: "1984", 
+  },
 ])
 
   // ----------------------------------------------------------
