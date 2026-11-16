@@ -46,17 +46,45 @@ async function main() {
   // Do the same here. Insert one book that has a publisher field
   // containing an embedded object with at least a name and a country.
 
+let result = await books.insertOne({
+  title: "The Great Gatsby",
+  publisher: {
+    name: "Scribner",
+    country: "United States"
+  }
+});
+
+  // console.log('Inserted book with _id: ${result.insertedId}');
+
   // ----------------------------------------------------------
   // TODO 2 - insertOne with an array
   // ----------------------------------------------------------
   // Insert one book that has a tags field containing
   // an array of at least 3 strings.
 
+result = await books.insertOne({
+  title: "The Code Book",
+  tags: ["Computer Science", "Cryptography", "Enigma"]
+})
+
   // ----------------------------------------------------------
   // TODO 3 - insertMany
   // ----------------------------------------------------------
   // Insert at least 5 books in a single call using insertMany.
   // Include a mix: some with a publisher object, some with tags, some with both.
+
+result = await books.insertMany([
+  {
+    title: "How to Win Friends and Influence People",
+    tags: ["human relations"]
+  },
+  {
+    title: "Rich Dad Poor Dad",
+    publisher: {
+      name: "Cashflow Technologies, Inc."
+    }
+  }
+])
 
   // ----------------------------------------------------------
   // TODO 4 - find all documents
